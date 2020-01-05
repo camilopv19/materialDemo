@@ -1,0 +1,17 @@
+<form class="example-form">
+    <mat-form-field>
+        <input ngModel name="username" type="text" matInput placeholder="Username" required>
+        <mat-hint>Use a unique Username</mat-hint>
+        <span matSuffix width="auto">@mydomain.com</span>
+        <span matPrefix width="auto">admin.</span>
+        <mat-error>
+            This field is required
+        </mat-error>
+    </mat-form-field>
+    <br><br>
+
+    <mat-form-field>
+        <textarea matInput mat-autosize placeholder="Leave a comment" rows="3"></textarea>
+    </mat-form-field>
+    <br><br>
+</form>

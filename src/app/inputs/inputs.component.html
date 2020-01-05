@@ -1,0 +1,26 @@
+<mat-checkbox 
+#showDetails
+[value]=""
+[checked] = "isChecked"
+(change) = "onChange($event)"
+class="example-margin">Subscribe to spam emails</mat-checkbox>
+<br>
+<div *ngIf="showDetails.checked">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum sed temporibus aliquam dolorum voluptatibus omnis quas excepturi enim aspernatur voluptate harum, non quaerat illo reprehenderit similique unde libero quam.</div>
+
+<br>
+<!-- mat-radio-group avoids property binding, like [checked]="isChecked"
+    by handling the value of the elements
+   -->
+<mat-radio-group value="1"
+aria-label="Select a gender">
+  <mat-radio-button value="0">Male</mat-radio-button>
+  <mat-radio-button value="1">Female</mat-radio-button>
+  <mat-radio-button value="2">Other</mat-radio-button>
+</mat-radio-group>
+<br><br>
+
+<mat-select [(ngModel)]="color">
+  <mat-option *ngFor="let color of colors" [value]="color.id"> {{ color.name }}</mat-option>
+</mat-select>
+
+<br><br>

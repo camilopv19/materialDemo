@@ -1,0 +1,28 @@
+<form >
+<mat-form-field>
+    <input (focus)="birthdate.open()" [min]="minDate" [max]="maxDate" matInput [matDatepicker]="birthdate">
+    <!-- matSuffix puts the icon for displaying the calendar at the right side -->
+    <mat-datepicker-toggle matSuffix [for]="birthdate"></mat-datepicker-toggle>
+    <mat-datepicker #birthdate touchUi="true"></mat-datepicker>
+</mat-form-field>
+</form>
+<br><br>
+<mat-icon id="rot">3d_rotation</mat-icon>
+<mat-icon id="al">add_alert</mat-icon>
+<br><br>
+
+<button mat-raised-button color="primary">Primary</button>
+<button mat-raised-button color="accent">Accent</button>
+<button mat-raised-button color="warn">Warn</button>
+<button mat-fab color="primary">
+    <mat-icon>network_check</mat-icon>
+</button>
+<br><br>
+
+<!-- For multi-selection, replace this event binding:
+ (click)="category.selected = !category.selected"  -->
+<mat-chip-list>
+    <mat-chip *ngFor="let category of categories" (click)="selectCategory(category)" [selected]="category.selected"
+        [color]="category.color">
+        {{ category.name }} </mat-chip>
+</mat-chip-list>

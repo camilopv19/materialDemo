@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"  // Don't mark the checkbox border
+    @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"
+*/ 
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css" /* Amber/yellow */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.mat-tab-body-content {
+    padding-top: 20px;
+    padding-left: 20px;
+}

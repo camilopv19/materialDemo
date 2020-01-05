@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { EditCourseComponent } from './edit-course/edit-course.component';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'materialDemo';
+
+  constructor(private dialog: MatDialog){
+  }
+
+  openDialog(){
+    this.dialog.open(EditCourseComponent)
+    .afterClosed()
+    .subscribe( m => console.log(m));
+  }
 }
