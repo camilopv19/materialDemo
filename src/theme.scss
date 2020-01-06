@@ -1,0 +1,32 @@
+// @mixin soft-border($border-radius){ // Used for sharing the same attributes in different places
+//     border: 1px solid grey;
+//     border-radius: $border-radius;
+//     padding: 10px;
+// }
+
+// -------- Define a custom theme
+
+@import "~@angular/material/_theming"; // Combines these two files, now here are all the methods
+// and variables available
+
+@include mat-core(); // from _theming
+$app-primary: mat-palette($mat-blue, 600); // function for the colors as parameters: See material.io/colors
+$app-accent: mat-palette($mat-yellow, 700);
+$app-warn: mat-palette($mat-red);
+
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+// $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme(
+  $app-theme
+); /* Remember to apply the background in the 
+body element, inside index.html
+*/
+
+// -------- Define a custom typography
+$app-typography: mat-typography-config(
+    $font-family: '"Pontano Sans", "Helvetica Neue", sans-serif',
+    $headline:      mat-typography-level(38px, 32px, 500)
+);
+
+@include angular-material-typography($app-typography);

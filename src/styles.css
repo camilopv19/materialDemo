@@ -6,6 +6,8 @@
 /* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css" /* Amber/yellow */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+/* @import "https://fonts.googleapis.com/css?family=Roboto:300,400,500"; */
+@import "https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap";
 
 .mat-tab-body-content {
     padding-top: 20px;

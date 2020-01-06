@@ -3,11 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';  // In case of no Animations
 
-import { MatNativeDateModule, MatButtonModule, MatCheckboxModule, MatRadioModule,
-  MatSelectModule, MatInputModule, MatIconModule, MatDatepickerModule, 
-  MatChipsModule, MatProgressSpinnerModule, MatTooltipModule, MatTabsModule, MatDialogModule
-       } from '@angular/material';
-
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SpinnerComponent } from './spinner/spinner.component';
@@ -15,7 +10,9 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { InputsComponent } from './inputs/inputs.component';
 import { Inputs2Component } from './inputs2/inputs2.component';
 import { TooltipTabsComponent } from './tooltip-tabs/tooltip-tabs.component';
-import { EditCourseComponent } from './edit-course/edit-course.component';
+import { EditCourseComponent} from './edit-course/edit-course.component';
+import { CourseService } from './course.service';
+import { MatComponentsModule } from './mat-components/mat-components.module';
 
 @NgModule({
   declarations: [
@@ -35,21 +32,14 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatInputModule,
-    MatIconModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    MatChipsModule,
-    MatProgressSpinnerModule,
-    MatTooltipModule,
-    MatTabsModule,
-    MatDialogModule
+    MatComponentsModule
   ],
-  providers: [],
+  providers: [
+    CourseService,
+    // Long, detailed way of the same thing as last line:
+    { provide: CourseService, useClass: CourseService },
+    // { provide: MAT_DIALOG_DATA, useValue: {} } //Already imported in the MatDialogModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
